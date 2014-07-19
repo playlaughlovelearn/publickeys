@@ -1,0 +1,45 @@
+This repository contains all of PlayLaughLoveLearn's public keys.
+
+No restrictions on distribution.
+
+It should go without saying, but you may not represent that any keys that are not part of our github
+repository are ours after altering them.
+
+Original repository available at: git@github.com:PlayLaughLoveLearn/publickeys.git.
+
+Note that we are not currently intending any of our signing keys to be considered trusted; until we
+can arrange a better solution for storing the keys, it's intended as a relatively secure method of
+indicating that the source of any software that we distrubute comes from us, but none of that is
+intended to imply any sort of guarantee, warranty, or any other security beyond that indication.
+
+Thanks!
+
+Lisa, PlayLaughLoveLearn
+
+
+CREATING SIGNATURES USING GPG
+-----------------------------
+
+To create the signatures in this repository, I've used the command:
+
+gpg --armor --out <FILENAME>.sig --detach-sign <FILENAME>
+
+Where "--armor" makes an text sig rather than binary, and "--detach-sign" causes the signature to be
+output to a separate file.
+
+
+VERIFYING SIGNATURES USING GPG
+------------------------------
+
+To check the signature on a "--detach-sign"ed document, you can run this command:
+
+gpg --verify <SIGNATURE FILE> <FILE>
+
+so, for instance, to check this file you would run:
+
+gpg --verify LICENSE.README.sig LICENSE.README
+
+Be aware, however, that unless you've gotten a copy of a key from a trusted source, this still
+provides little security, as someone could simply create a new key with the same data, and then
+sign to their heart's content.
+
